@@ -44,3 +44,17 @@ const displayResultMessage = (color, desc) => {
     });
     $("body").appendChild(el);
 }
+
+/**
+ * 読み込み時にクエリでなんかあれば初期値で代入
+ * p=呪文、t=対象
+ */
+window.onload = () => {
+    const param = new URLSearchParams(window.location.search);
+    if (param.has("p")) {
+        $("#prompt").value = param.get("p");
+    }
+    if (param.has("t")) {
+        $("#target").value = param.get("t");
+    }
+};

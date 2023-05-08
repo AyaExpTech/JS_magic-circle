@@ -47,6 +47,10 @@ Follow one of the following licenses.
 
 ## 更新履歴
 
+2023-05-08 `v1.1.0`
+- OGPとfaviconを追加
+- クエリ文字列で初期値を代入できるように(p=呪文、t=対象)
+
 2023-05-08 `v1.0.2`
 - GitHubリポジトリへのリンクを追加
 
