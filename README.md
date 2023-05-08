@@ -47,6 +47,9 @@ Follow one of the following licenses.
 
 ## 更新履歴
 
+2023-05-08 `v1.0.1`
+- 綾急技研・綾坂ことの文言にそれぞれTwitterへのリンクを追加
+
 2023-05-08 `v1.0.0`
 - リリース
 - `.nojekyll`と`.gitignore`を追加(いつもの)
