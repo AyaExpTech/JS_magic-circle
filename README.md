@@ -36,7 +36,20 @@ Follow one of the following licenses.
 
 - "AeTOS for Seller" …… https://axtech.dev/license/#aetos-for-seller
 
+### 注意
+
+以下の素材にはAeTOSが適用されないことに注意してください。
+
+1.  魔法陣素材(`circle.svg`)は『あやえも研究所』様の素材をお借りしています。  
+    ([配布サイト](https://ayaemo.skr.jp/material_magic_circuit.html))
+2.  魔法杖素材(`wand.svg`)は『Font Awesome』様の素材をお借りしています。  
+    ([配布サイト](https://fontawesome.com/icons/wand-magic-sparkles?f=classic&s=solid))
+
 ## 更新履歴
+
+2023-05-08 `v1.0.0`
+- リリース
+- `.nojekyll`と`.gitignore`を追加(いつもの)
 
 2023-05-08 `v0.0.0`
 - 思いついたのでリポジトリを立てました

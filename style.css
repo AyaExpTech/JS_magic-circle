@@ -1,0 +1,188 @@
+/* =================================================================================
+    フォントの読み込み
+================================================================================== */
+
+/* 'M PLUS 1p' */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap');
+
+/* 'Font Awesome 6 Free' */
+@import url('https://use.fontawesome.com/releases/v6.4.0/css/all.css');
+
+/* =================================================================================
+    リセットCSS(どっちかというとNormalize.css)
+================================================================================== */
+
+* {
+    margin: 0;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'M PLUS 1p';
+    color: #eee;
+}
+
+:where(ul, ol, li) {
+    padding-left: revert;
+}
+
+/* =================================================================================
+    全体
+================================================================================== */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+img.background {
+    opacity: 0.15;
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 67%;
+    max-height: 67%;
+    translate: -50% -50%;
+}
+
+/* =================================================================================
+    入力欄(textarea)
+================================================================================== */
+
+textarea#target {
+    top: 20%;
+}
+
+textarea#prompt {
+    bottom: 20%;
+}
+
+textarea {
+    position: fixed;
+    resize: none;
+    left: 10%;
+    z-index: 1;
+    width: 80%;
+    height: 20%;
+    padding: 0.67rem;
+    border-radius: 0.67rem;
+    background: linear-gradient(to right bottom, #44444477, #44444444);
+    scrollbar-color: #6BAF8D #232e33;
+    caret-color: rgba(210, 210, 210, 0.6);
+    color: rgba(240, 240, 240, 0.9);
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 18px 2px rgba(255, 255, 255, 0.3);
+}
+
+textarea::placeholder {
+    color: rgba(240, 240, 240, 0.45);
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.35);
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 10px;
+}
+
+/* =================================================================================
+    詠唱ボタン(button)
+================================================================================== */
+
+button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    translate: -50% -50%;
+    border-radius: 100rem;
+    scale: 1;
+    background: linear-gradient(to right bottom, #eee, #bbb);
+    box-shadow: 0px 1px 16px 2px rgba(255, 255, 255, 0.4);
+    transition: scale 0.25s, box-shadow 0.25s;
+}
+
+button:hover {
+    scale: 1.04;
+    box-shadow: 0px 2px 16px 2px rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+    scale: 0.98;
+    box-shadow: 0px 0px 16px 2px rgba(255, 255, 255, 0.3);
+}
+
+button>img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    margin: 1.25rem;
+}
+
+/* =================================================================================
+    説明文(p)
+================================================================================== */
+
+p.name {
+    position: fixed;
+    right: 10%;
+    top: 50%;
+    translate: 0 -50%;
+    text-align: right;
+}
+
+p.usage {
+    position: fixed;
+    left: 10%;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+/* =================================================================================
+    メッセージ(p.message)
+================================================================================== */
+
+p.message {
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    translate: -50% 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 2rem;
+    /* @keyframes duration | easing-function | delay |
+    iteration-count | direction | fill-mode | play-state | name */
+    animation: 0.4s ease-out 0s 1 forwards messageFadeIn, 0.4s ease-out 3.1s 1 forwards messageFadeOut;
+}
+
+@keyframes messageFadeIn {
+
+    0% {
+        transform: translateY(102%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes messageFadeOut {
+
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(102%);
+    }
+}
