@@ -6,6 +6,8 @@
 
 ## 使い方
 
+- [https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます
+
 ### 一般利用者向け
 
 1. 近くにいる魔術者(もといエンジニア)に呪文をもらいます。
@@ -44,6 +46,9 @@ Follow one of the following licenses.
     ([配布サイト](https://fontawesome.com/icons/wand-magic-sparkles?f=classic&s=solid))
 
 ## 更新履歴
+
+2023-05-08 `v1.0.2`
+- GitHubリポジトリへのリンクを追加
 
 2023-05-08 `v1.0.1`
 - 綾急技研・綾坂ことの文言にそれぞれTwitterへのリンクを追加
