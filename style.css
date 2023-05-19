@@ -140,6 +140,10 @@ p.name {
     top: 50%;
     translate: 0 -50%;
     text-align: right;
+    width: 35%;
+    font-size: clamp(0.25rem,
+            1vw,
+            1rem);
 }
 
 p.usage {
@@ -147,6 +151,10 @@ p.usage {
     left: 10%;
     top: 50%;
     translate: 0 -50%;
+    width: 35%;
+    font-size: clamp(0.25rem,
+            1vw,
+            1rem);
 }
 
 /* =================================================================================

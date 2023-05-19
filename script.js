@@ -16,9 +16,6 @@ const magic = () => {
         if (promptText == "") {
             throw new Error("呪文を入力してください");
         }
-        if (targetText == "") {
-            throw new Error("対象を入力してください");
-        }
         const result = Function("input", promptText)(targetText);
         $("#target").value = String(result);
         displayResultMessage("#393", "呪文の詠唱に成功しました！");
