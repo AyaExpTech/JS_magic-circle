@@ -29,7 +29,7 @@ return +input * 2;
 ## 利用規約
 
 Copyright (c) 2023- Ayasaka-Koto  
-公序良俗に反する利用および(GitHubのforkを除く)再配布を禁じます。
+公序良俗に反する利用および(GitHubのforkを除く)再配布を禁じます。  
 それ以外の利用は法人利用含めご自由にどうぞ。
 
 ### 注意
