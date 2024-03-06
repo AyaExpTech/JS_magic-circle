@@ -26,6 +26,9 @@
 return +input * 2;
 ```
 
+> URLのクエリパラメータで初期値を設定できます。`p`が呪文、`t`が対象。
+> 例 : テキストのURLエンコード → https://ayaexptech.github.io/JS_magic-circle/?p=return%20encodeURIComponent(input)
+
 ## 利用規約
 
 Copyright (c) 2023- Ayasaka-Koto
