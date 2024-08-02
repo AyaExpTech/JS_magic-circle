@@ -55,3 +55,12 @@ window.onload = () => {
         $("#target").value = param.get("t");
     }
 };
+
+/**
+ * ショートカットキー Command(Ctrl) + Enter
+ */
+document.addEventListener("keyup", (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+        magic();
+    }
+});
