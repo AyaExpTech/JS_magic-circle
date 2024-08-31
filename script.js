@@ -20,6 +20,7 @@ const magic = () => {
         $("#target").value = String(result);
         displayResultMessage("#393", "呪文の詠唱に成功しました！");
     } catch (error) {
+        console.error(error);
         displayResultMessage("#933", error.message);
     }
 };
@@ -44,7 +45,7 @@ const displayResultMessage = (color, desc) => {
 
 /**
  * 読み込み時にクエリでなんかあれば初期値で代入
- * p=呪文、t=対象
+ * p=呪文、t=対象、title=タイトル
  */
 window.onload = () => {
     const param = new URLSearchParams(window.location.search);
@@ -53,6 +54,9 @@ window.onload = () => {
     }
     if (param.has("t")) {
         $("#target").value = param.get("t");
+    }
+    if (param.has("title")) {
+        window.document.title = `${param.get("title")} | JS_magic-circle`;
     }
 };
 

@@ -27,8 +27,8 @@
 return +input * 2;
 ```
 
-> URLのクエリパラメータで初期値を設定できます。`p`が呪文、`t`が対象。  
-> 例 : テキストのURLエンコード → https://ayaexptech.github.io/JS_magic-circle/?p=return%20encodeURIComponent(input)
+> URLのクエリパラメータで初期値を設定できます。`p`が呪文、`t`が対象、`title`がタイトル。  
+> 例 : テキストのURLエンコード → https://ayaexptech.github.io/JS_magic-circle/?p=return%20encodeURIComponent(input)&title=URL%20encode
 
 ## 利用規約
 
@@ -39,7 +39,7 @@ Copyright (c) 2023- Ayasaka-Koto
 
 ### 注意
 
-以下の素材にはAeTOSが適用されないことに注意してください。
+以下の素材には上記利用規約が適用されないことに注意してください。
 
 1.  魔法陣素材(`circle.svg`)は『あやえも研究所』様の素材をお借りしています。  
     ([配布サイト](https://ayaemo.skr.jp/material_magic_circuit.html))
@@ -50,6 +50,10 @@ Copyright (c) 2023- Ayasaka-Koto
 
 > ※現在のバージョンはツールにも表示されます。  
 > (@開発者 リリース時に変更を忘れずに！)
+
+2024-08-31 `v1.5.0`
+- フォントを変更
+- クエリ文字列でページタイトルを設定できるように(title=タイトル)
 
 2024-08-02 `v1.4.0`
 - ショートカットキーを追加
