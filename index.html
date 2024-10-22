@@ -3,39 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>JS_magic-circle</title>
+    <!-- ファイル読み込み -->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
+    <!-- ==== load.md.js, article.css ==== -->
+    <script type="module" src="https://cdn.jsdelivr.net/gh/AXT-AyaKoto/load.md.js/module.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AXT-AyaKoto/article.css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github-dark.min.css">
     <!-- ==== favicon設定 ==== -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/AyaExpTech/logos/AyaExpTech_AXTBlue_AXTWhite.svg">
     <!-- ==== OGP設定 ==== -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="JavaScript_magic-circle">
-    <meta property="og:description" content="JavaScript_magic-circle">
-    <meta property="og:image" content="https://axtech.dev/img/thumbnail.png">
+    <meta property="og:title" content="JS_magic-circle">
+    <meta property="og:description" content="『プログラミングは現代の魔法なので、呪文詠唱する魔法円的なものがあってもいいと思うんだ』綾坂こと制作のJavaScript魔法詠唱ツールです">
+    <meta property="og:image" content="img/thumbnail.png">
     <meta name="twitter:card" content="summary">
-    <!-- ==== 外部読み込み ==== -->
-    <!-- AXT-func.js -->
-    <script src="https://cdn.jsdelivr.net/gh/AyaExpTech/AXT-func.js/script.min.js"></script>
 </head>
 
 <body>
-    <p class="usage">
-        【使い方】<br>
-        1. 上の入力欄に魔法をかける対象を入力します。<br>
-        2. 下の入力欄に魔術師からもらった呪文を入力します。<br>
-        3. 中央のボタンを押すと対象に魔法がかかります。
-    </p>
-    <p class="name">
-        <b><a href="https://github.com/AyaExpTech/JS_magic-circle">『JavaScript_magic-circle』</a></b><br>
-        ver1.5.0 (2024-08-31 released)<br>
-        ©2023- <a href="https://x.com/AyaExpTech">AyaExpTech</a>, <a href="https://x.com/AXT_AyaKoto">Ayasaka-Koto</a>
-    </p>
-    <img src="circle.svg" alt="" class="background">
-    <textarea id="target" placeholder="対象"></textarea>
-    <button id="do" onclick="magic()"><img src="wand.svg" alt=""></button>
-    <textarea id="prompt" placeholder="呪文"></textarea>
+    <section class="title">
+        <h1>JS_magic-circle</h1>
+        <p class="version">ver 2.0.0</p>
+        <p><small>copyright (c) 2023- Ayasaka-Koto (Project "AyaExpTech")</small></p>
+    </section>
+    <section class="target">
+        <textarea id="target" class="neumorphism-down" placeholder="対象"></textarea>
+    </section>
+    <section class="spell">
+        <textarea id="spell" class="neumorphism-down" placeholder="呪文"></textarea>
+    </section>
+    <section class="readme">
+        <article data-load-md-js="./README.md"></article>
+    </section>
+    <section class="options">
+        <p>
+            v1互換モード : <input type="checkbox" id="v1compat" switch>
+        </p>
+    </section>
+    <section class="buttons">
+        <button id="start">&#xe2ca</button>
+        <button id="cycle">&#xf148</button>
+    </section>
+    <section class="result">
+        <textarea id="result" class="neumorphism-down" readonly placeholder="出力"></textarea>
+    </section>
 </body>
 
 </html>

@@ -1,55 +1,66 @@
 # JS_magic-circle
 
-> 『プログラミングは現代の魔法なので、呪文詠唱する魔法円的なものがあってもいいと思うんだ』
+> プログラミングは現代の魔法なので、呪文詠唱する魔法円的なものがあってもいいと思うんだ
 
-綾坂こと制作のJavaScript魔法詠唱ツールです(？)
+綾坂こと制作のJavaScript魔法詠唱ツールです
+
+GitHub : [https://github.com/AyaExpTech/JS_magic-circle](https://github.com/AyaExpTech/JS_magic-circle)
 
 ## 使い方
 
-- [https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます
+[https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます
 
 ### 一般利用者向け
 
 1. 近くにいる魔術者(もといエンジニア)に呪文をもらいます。
 2. もらった呪文を『呪文』の欄にコピペします。
 3. 魔法をかける対象となるデータを『対象』の欄にコピペします。
-4. 中央の杖のボタンを押します。
-    - Ctrl+Enter(macではcommand+Enter)でもOK
+4. 中央下の杖のボタンを押します。
+    - Ctrl+Enter(macではcommand+Enter)でも実行できます。
+    - Ctrl+Shift+Enter(macではcommand+Shift+Enter)を押すと、現在の"出力"を"対象"にコピーしてから実行します。
 5. 対象データに呪文がかかります。あとは煮るなり焼くなりお好きに。
+
+### ver1.x.xから使っていた方向け
+
+- ver2.x.x以降、呪文の仕様が変更されています。
+    - ver1.x.x時点の呪文をそのまま使いたい場合は、オプションの「v1互換モード」をONにしてください。
+- 対象欄と出力欄が分離されました。
 
 ### 魔術者(エンジニア)向け
 
-出力値を返す関数の中身のコードを書き、呪文として渡してください。  
-`input`で入力値を(String型で)参照できます。  
-例 : 入力値を2倍する呪文の入力値↓
-
-```js
-return +input * 2;
-```
-
-> URLのクエリパラメータで初期値を設定できます。`p`が呪文、`t`が対象、`title`がタイトル。  
-> 例 : テキストのURLエンコード → https://ayaexptech.github.io/JS_magic-circle/?p=return%20encodeURIComponent(input)&title=URL%20encode
+- 入力値をstring型で受け取り、出力値をstringで返す関数オブジェクト(式)を書いてください。
+    - 例 : 入力値を2倍する呪文 → `input => (+input * 2).toString()`
+- URLのクエリパラメータで初期値を設定できます。
+    - `p` : 呪文
+    - `t` : 対象
+    - `title` : タイトル
+        - ページタイトルを一部自由に設定できます
+    - `file` : ファイル名
+        - 呪文をファイルから読み込みます
+    - 例 : テキストのURLエンコード → https://ayaexptech.github.io/JS_magic-circle/?p=return%20encodeURIComponent(input)&title=URL%20encode
+- v1互換モードをONにすると、ver1.x.xの呪文を(ほぼ)そのまま使えます。
+    - 内部的には、前に`input => {`、後ろに`}`を追加して実行しています。
 
 ## 利用規約
 
-Copyright (c) 2023- Ayasaka-Koto
+copyright (c) 2023- Ayasaka-Koto (Project "AyaExpTech"), All rights reserved.  
 
-日本の法令や公序良俗に反さなければ自由に利用できます。  
-再配布時は著作者(原作者)として"綾坂こと"を表記してください。
-
-### 注意
-
-以下の素材には上記利用規約が適用されないことに注意してください。
-
-1.  魔法陣素材(`circle.svg`)は『あやえも研究所』様の素材をお借りしています。  
-    ([配布サイト](https://ayaemo.skr.jp/material_magic_circuit.html))
-2.  魔法杖素材(`wand.svg`)は『Font Awesome』様の素材をお借りしています。  
-    ([配布サイト](https://fontawesome.com/icons/wand-magic-sparkles?f=classic&s=solid))
+私に不利益が生じたり、公序良俗に反したりしない限り、基本的には自由に使用していただいて構いません。  
+私が使用を許可したくない場合はその旨ご連絡いたします。その際は速やかに使用を中止していただきますようお願いいたします。  
+使った際は、私の名前(綾坂こと)をどこかに記載していただけると嬉しいです。
 
 ## 更新履歴
 
 > ※現在のバージョンはツールにも表示されます。  
 > (@開発者 リリース時に変更を忘れずに！)
+
+2024-10-23 `v2.0.0`
+- 全体的なデザイン変更
+- 呪文の仕様を変更
+    - 入力値をstring型で受け取り、出力値をstringで返す関数オブジェクト(式)を書くように変更
+    - ver1.x.x時点の呪文をそのまま使いたい場合は、オプションの「v1互換モード」をONにしてください
+- 対象欄と出力欄を分離
+- クエリ文字列でファイルから呪文を読み込めるように(file=ファイル名)
 
 2024-08-31 `v1.5.0`
 - フォントを変更
