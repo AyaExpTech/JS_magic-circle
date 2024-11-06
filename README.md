@@ -57,6 +57,9 @@ copyright (c) 2023- Ayasaka-Koto (Project "AyaExpTech"), All rights reserved.
 > ※現在のバージョンはツールにも表示されます。  
 > (@開発者 リリース時に変更を忘れずに！)
 
+2024-11-07 `v2.1.0`
+- async functionが使えるように
+
 2024-10-23 `v2.0.0`
 - 全体的なデザイン変更
 - 呪文の仕様を変更
