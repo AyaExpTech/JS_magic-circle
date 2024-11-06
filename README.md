@@ -30,6 +30,9 @@ GitHub : [https://github.com/AyaExpTech/JS_magic-circle](https://github.com/AyaE
 
 - 入力値をstring型で受け取り、出力値をstringで返す関数オブジェクト(式)を書いてください。
     - 例 : 入力値を2倍する呪文 → `input => (+input * 2).toString()`
+    - 例 : 入力値をURLエンコードする呪文 → `input => encodeURIComponent(input)`
+    - async functionも使えます
+        - 例 : 1秒待って入力値を返す呪文 → `async input => { await new Promise(r => setTimeout(r, 1000)); return input; }`
 - URLのクエリパラメータで初期値を設定できます。
     - `p` : 呪文
     - `t` : 対象

@@ -70,7 +70,7 @@ const displayResultMessage = (color, desc) => {
 /**
  * 詠唱
  */
-const magic = () => {
+const magic = async () => {
     /** @type {string} - 対象 */
     const target = $("textarea#target").value;
     /** @type {string} - 呪文 */
@@ -89,9 +89,13 @@ const magic = () => {
         } else {
             fn = new Function(`return ${spell};`)();
         }
-        const result = fn(target);
+        // メッセージを表示(詠唱を開始)
+        displayResultMessage("#555", "詠唱を開始");
+        const result = await fn(target);
         // 結果をtextareaに表示
         $("textarea#result").value = result;
+        // メッセージを表示
+        displayResultMessage("#282", "詠唱が完了しました");
     } catch (error) {
         displayResultMessage("#822", "«Error» " + error.message);
         console.error(error);
