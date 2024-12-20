@@ -87,7 +87,7 @@ const magic = async () => {
         if (isV1) {
             fn = new Function(`return (input => {${spell}});`)();
         } else {
-            fn = new Function(`return ${spell};`)();
+            fn = new Function(`return (${spell});`)();
         }
         // メッセージを表示(詠唱を開始)
         displayResultMessage("#555", "詠唱を開始");

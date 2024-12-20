@@ -57,6 +57,9 @@ copyright (c) 2023- Ayasaka-Koto (Project "AyaExpTech"), All rights reserved.
 > ※現在のバージョンはツールにも表示されます。  
 > (@開発者 リリース時に変更を忘れずに！)
 
+2024-12-21 `v2.1.1`
+- 1行目にコメントがあるとエラーになるバグを修正
+
 2024-11-07 `v2.1.0`
 - async functionが使えるように
 
