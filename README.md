@@ -2,11 +2,13 @@
 
 > プログラミングは現代の魔法なので、呪文詠唱する魔法円的なものがあってもいいと思うんだ
 
-綾坂こと制作のJavaScript魔法詠唱ツールです
+JavaScriptを「魔法」として扱う詠唱ツールです。
 
 GitHub : [https://github.com/AyaExpTech/JS_magic-circle](https://github.com/AyaExpTech/JS_magic-circle)
 
 ## 使い方
+
+**大いなる力には、大いなる責任が伴います。**
 
 [https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます
 
@@ -46,11 +48,8 @@ GitHub : [https://github.com/AyaExpTech/JS_magic-circle](https://github.com/AyaE
 
 ## 利用規約
 
-copyright (c) 2023- Ayasaka-Koto (Project "AyaExpTech"), All rights reserved.  
-
-私に不利益が生じたり、公序良俗に反したりしない限り、基本的には自由に使用していただいて構いません。  
-私が使用を許可したくない場合はその旨ご連絡いたします。その際は速やかに使用を中止していただきますようお願いいたします。  
-使った際は、私の名前(綾坂こと)をどこかに記載していただけると嬉しいです。
+copyright (c) 2023- Ayasaka-Koto  
+Released under [the MIT License](https://opensource.org/license/mit)
 
 ## 更新履歴
 
