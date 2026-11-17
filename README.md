@@ -1,16 +1,30 @@
 # JS_magic-circle
 
+> [!IMPORTANT]
+> 以下の理由から、このリポジトリは削除され、ツール(のWebページ)も公開が終了します。
+> - セキュリティの観点から見て、このツールの機能の実装は危険性が高いため
+> - Organization `AyaExpTech`を2027年3月末を目処に廃止するため
+> 
+> [`AXT-AyaKoto/TS-magic-circle`](https://github.com/AXT-AyaKoto/TS-magic-circle)に同等のサービスを作ってあるので、そちらに移行してください。  
+> https://ts-magic-circle.ayagawap.workers.dev/
+
+---
+
 > プログラミングは現代の魔法なので、呪文詠唱する魔法円的なものがあってもいいと思うんだ
 
 JavaScriptを「魔法」として扱う詠唱ツールです。
 
-GitHub : [https://github.com/AyaExpTech/JS_magic-circle](https://github.com/AyaExpTech/JS_magic-circle)
-
 ## 使い方
 
-**大いなる力には、大いなる責任が伴います。**
+> [!CAUTION]
+> **大いなる力には、大いなる責任が伴います。**
+> 
+> このツールはブラウザ上で直接プログラムを実行します。  
+> そのため、プログラムの実行者の悪意によってあなたについての情報の一部を容易に盗める危険性を持っています。  
+> このツールで知らない人が書いたコードを理解せずに実行することは危険です。  
+> **実行するプログラム(呪文)は、あなたが理解できるものか、あなたが信頼できる人によって作成されたものに限ってください**。
 
-[https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます
+[https://ayaexptech.github.io/JS_magic-circle/](https://ayaexptech.github.io/JS_magic-circle/)を開きます。
 
 ### 一般利用者向け
 
@@ -55,6 +69,9 @@ Released under [the MIT License](https://opensource.org/license/mit)
 
 > ※現在のバージョンはツールにも表示されます。  
 > (@開発者 リリース時に変更を忘れずに！)
+
+2026-11-18 `vX.X.X`
+- Organization `AyaExpTech`閉鎖に向けた移行の案内を追加
 
 2024-12-21 `v2.1.1`
 - 1行目にコメントがあるとエラーになるバグを修正
