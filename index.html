@@ -8,10 +8,6 @@
     <!-- ファイル読み込み -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="module"></script>
-    <!-- ==== load.md.js, article.css ==== -->
-    <script type="module" src="https://cdn.jsdelivr.net/gh/AXT-AyaKoto/load.md.js/module.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AXT-AyaKoto/article.css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github-dark.min.css">
     <!-- ==== favicon設定 ==== -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/AyaExpTech/logos/AyaExpTech_AXTBlue_AXTWhite.svg">
     <!-- ==== OGP設定 ==== -->
@@ -35,7 +31,36 @@
         <textarea id="spell" class="neumorphism-down" placeholder="呪文"></textarea>
     </section>
     <section class="readme">
-        <article data-load-md-js="./README.md"></article>
+        <article class="migration neumorphism-up" aria-labelledby="migration-title">
+            <h2 id="migration-title">移行のお知らせ</h2>
+            <p>このページで提供していたサービスは、次のアドレスへの移行を行います。</p>
+            <a class="migration-address"
+                href="https://ts-magic-circle.ayagawap.workers.dev/">https://ts-magic-circle.ayagawap.workers.dev/</a>
+            <p>今後はそちらをご利用ください。<br><strong>ブックマークなどに登録している方は、登録先を新しいアドレスへ変更してください。</strong></p>
+            <h3>移行スケジュール</h3>
+            <ol>
+                <li>
+                    <time datetime="2027-01">2027年1月中旬ごろ</time>
+                    <p>こちらのサイトでの機能提供を停止します。これ以降、このページは移行の案内のみのサイトになります。</p>
+                </li>
+                <li>
+                    <time datetime="2027-03">2027年3月下旬ごろ</time>
+                    <p>こちらのサイトの公開を停止します。これ以降、このサイトにアクセスしようとしても404となります。</p>
+                </li>
+            </ol>
+            <h3>連絡先</h3>
+            <p><strong class="migration-plain">なにかあれば、作者の綾坂ことまでご連絡ください。</strong></p>
+            <dl>
+                <div>
+                    <dt>メール</dt>
+                    <dd><a href="mailto:ayasaka.koto@axtech.dev">ayasaka.koto@axtech.dev</a></dd>
+                </div>
+                <div>
+                    <dt>その他の連絡先</dt>
+                    <dd><a href="https://axtech.dev#contact">https://axtech.dev#contact</a></dd>
+                </div>
+            </dl>
+        </article>
     </section>
     <section class="options">
         <p>

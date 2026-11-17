@@ -28,7 +28,7 @@
     CSSのNormalize
 ================================================================================== */
 
-*:not(:where(article[data-load-md-js] *)) {
+* {
     margin: 0;
     border: 0;
     outline: 0;
@@ -264,39 +264,255 @@ section.spell {
 section.readme {
     width: 100%;
     height: 100%;
+    min-width: 0;
     grid-row: 2 / 4;
     grid-column: -2 / -1;
 
-    &>article {
+    &>article.migration {
+        --migration-accent: #e8b450;
+        --migration-on-accent: #241a08;
+        --migration-surface: color-mix(in oklab, var(--base), #e8b450 6%);
         width: 100%;
         height: 100%;
-        overflow: scroll;
-        border: 1px solid oklch(from currentColor l c h / .125);
-        background-color: #ccd;
-        color: #223;
-        padding: .5rem;
+        overflow-y: auto;
+        container-type: scroll-state;
+        color-scheme: dark;
+        scroll-padding-block: .5rem;
+        border: 1px solid color-mix(in oklab, var(--migration-accent) 45%, transparent);
+        border-top: 4px solid var(--migration-accent);
+        border-radius: 1rem;
+        background-color: var(--migration-surface);
+        padding: 1rem 1.1rem 1.4rem;
 
-        & * {
+        &>*+* {
+            margin-top: .85rem;
+        }
 
-            &:where(blockquote) {
-                padding-top: 1rem;
-                padding-bottom: 0;
+        & h2 {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font: 500 1.45rem/1.25 'Ubuntu', 'M PLUS 1p';
+            color: var(--migration-accent);
+
+            &::before {
+                content: "\f071" / "";
+                font: 900 1.1rem/1 'Font Awesome 6 Free';
+                color: var(--migration-accent);
+            }
+        }
+
+        & h3 {
+            margin-top: 1.35rem;
+            font: 500 1.05rem/1.3 'Ubuntu', 'M PLUS 1p';
+        }
+
+        & p {
+            font: 300 1rem/1.65 'Ubuntu', 'M PLUS 1p';
+        }
+
+        & strong {
+            font: 500 1rem/1.65 'Ubuntu', 'M PLUS 1p';
+            color: var(--migration-accent);
+        }
+
+        & strong.migration-plain {
+            color: inherit;
+        }
+
+        & .migration-address {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: .15rem;
+            padding: .7rem .85rem;
+            border-radius: .75rem;
+            background-color: var(--migration-accent);
+            color: var(--migration-on-accent);
+            font: 600 1.2rem/1.5 'M PLUS 1 Code', monospace;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: .2em;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            box-shadow:
+                -3px -3px 5px var(--shadow-light),
+                3px 3px 5px var(--shadow-dark);
+            transition: background-color .2s, box-shadow .2s;
+
+            &:hover {
+                background-color: color-mix(in oklab, var(--migration-accent), white 15%);
             }
 
-            &:where(pre>code, blockquote) {
-                margin-inline: 0;
+            &:active {
+                box-shadow:
+                    inset -2px -2px 3px oklch(100% 0 0 / .3),
+                    inset 2px 2px 3px oklch(0% 0 0 / .3);
+            }
+        }
+
+        & ol {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        & li {
+            padding: 0 0 .1rem .9rem;
+            border-inline-start: 2px solid color-mix(in oklab, var(--text) 70%, var(--base));
+        }
+
+        & time {
+            display: block;
+            margin-bottom: .25rem;
+            font: 500 1rem/1.3 'Ubuntu', 'M PLUS 1p';
+        }
+
+        & li p {
+            font: 300 .95rem/1.65 'Ubuntu', 'M PLUS 1p';
+        }
+
+        & dl {
+            display: grid;
+            gap: .75rem;
+        }
+
+        & dl div {
+            display: grid;
+            gap: .15rem;
+        }
+
+        & dt {
+            font: 500 .8rem/1.3 'Ubuntu', 'M PLUS 1p';
+        }
+
+        & dd {
+            min-width: 0;
+        }
+
+        & dd a:any-link {
+            text-decoration: underline;
+            text-underline-offset: .15em;
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        & :where(a:any-link):focus-visible {
+            outline: 2px solid var(--migration-accent);
+            outline-offset: 3px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: sticky;
+            block-size: .5rem;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        &::before {
+            inset-block-start: 0;
+            margin-block-end: -.5rem;
+            background: radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / .35), transparent);
+        }
+
+        &::after {
+            inset-block-end: 0;
+            margin-block-start: -.5rem;
+            background: radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / .35), transparent);
+        }
+
+        @container scroll-state(scrollable: block-start) {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        @container scroll-state(scrollable: block-end) {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        @supports not (container-type: scroll-state) {
+
+            &::before,
+            &::after {
+                animation: migration-show-shadow linear both;
+                animation-timeline: scroll();
             }
 
-            &:where(a) {
-                text-decoration: underline;
-                display: inline;
-                padding: 0;
-
-                &::before {
-                    content: "";
-                    display: none;
-                }
+            &::before {
+                animation-range: 0 2rem;
             }
+
+            &::after {
+                animation-direction: reverse;
+                animation-range: calc(100% - 2rem) 100%;
+            }
+        }
+
+        @supports not ((container-type: scroll-state) or (animation-timeline: scroll())) {
+            background:
+                linear-gradient(var(--migration-surface) 30%, transparent) top / 100% 2.5rem no-repeat local,
+                linear-gradient(transparent, var(--migration-surface) 70%) bottom / 100% 2.5rem no-repeat local,
+                radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / .35), transparent) top / 100% .5rem no-repeat,
+                radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / .35), transparent) bottom / 100% .5rem no-repeat,
+                var(--migration-surface);
+        }
+    }
+}
+
+@keyframes migration-show-shadow {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    section.readme>article.migration::before,
+    section.readme>article.migration::after,
+    section.readme>article.migration .migration-address {
+        transition: none;
+    }
+}
+
+@media (forced-colors: active) {
+    section.readme>article.migration {
+        border: 1px solid CanvasText;
+        border-top-width: 4px;
+        background: Canvas;
+        box-shadow: none;
+
+        & h2,
+        & h2::before,
+        & strong {
+            color: CanvasText;
+        }
+
+        & .migration-address {
+            border: 2px solid LinkText;
+            background: Canvas;
+            color: LinkText;
+        }
+
+        & li {
+            border-inline-start-color: CanvasText;
+        }
+
+        & a:any-link {
+            color: LinkText;
+        }
+
+        & :where(a:any-link):focus-visible {
+            outline-color: Highlight;
         }
     }
 }
